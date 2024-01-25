@@ -120,7 +120,7 @@ void displayInstructions() {
     printf("        3. SinglePair <initialPosition> <finalPosition>\n");
     printf("        4. SingleSource <initialPosition>\n");
     printf("        5. PrintLength <initialPosition> <finalPosition>\n");
-    printf("        6. PrintPath <initialPosition> <finalPosition>\n");
+    printf("        6. PrintPath <initialPosition> <finalPosition>\n\n");
 }
 
 void printAdjacencyList (GRAPH * graph, int flagValue) {
@@ -237,9 +237,9 @@ void printPath (GRAPH * graph, int initialPosition, int finalPosition) {
         return;
     }
 
-    //print out error statement if both inital and final positions are invalid with the most recent call to SinglePair
-    if (wasSinglePairCalled == true && (initialPosition != calledInitialPosition && finalPosition != calledFinalPosition)) {
-        fprintf(stdout, "Initial and Final positions are not matched with SinglePair command!\n");
+    //print out error statement if the initial position does not match with the most recent call to SingleSource
+    if (wasSingleSourceCalled == true && initialPosition != calledInitialPosition) {
+        fprintf(stdout, "Initial position is not matched with SingleSource command!\n");
         return;
     }
 
