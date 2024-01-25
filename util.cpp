@@ -12,7 +12,9 @@ int nextAction(char *Action, int *initialPosition, int *finalPosition) {
     returnAction = sscanf(input, "%s %d %d", Action, initialPosition, finalPosition);
 
         if (strcmp (Action, "Stop") == 0)                                       return 1;                           //perform Stop action when it is called
-        if (strcasecmp(Action, "Instruction") == 0 || strcasecmp(Action, "Instructions") == 0)   return 1;          //perform Instruction action when it is called
+        if (strcasecmp(Action, "Instruction") == 0)                             return 1;                           //perform Instruction action when it is called
+        if (strcasecmp(Action, "Instructions") == 0)                            return 1;                           //perform Instruction action when it is called
+        if (strcmp(Action, "?") == 0)                                           return 1;                           //perform Instruction action when it is called
         if ((strcmp (Action, "PrintADJ") == 0) && (returnAction == 1))          return 1;                           //perform PrintADJ action when it is called
 
         if (strcmp (Action, "SinglePair") == 0) {                                                                   //perform Single Pair action when it is called

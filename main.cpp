@@ -64,12 +64,24 @@ int main (int argc, char **argv) {
             break;
         }
 
-        //Display instructions
-        if (strcasecmp(Action, "Instruction") == 0 || strcasecmp(Action, "Instructions") == 0) {
+        //Display instructions (1st way)
+        if (strcmp(Action, "?") == 0) {
             displayInstructions();
             continue;
         }
 
+        //Display instructions (2nd way)
+        if (strcasecmp(Action, "Instruction") == 0) {
+            displayInstructions();
+            continue;
+        }
+
+        //Display instructions (3rd way)
+        if (strcasecmp(Action, "Instructions") == 0) {
+            displayInstructions();
+            continue;
+        }
+        
         //PrintADJ action
         if (strcmp(Action, "PrintADJ") == 0) {
             printAdjacencyList(graph, flagValue);
